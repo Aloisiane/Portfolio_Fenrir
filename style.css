@@ -1,0 +1,503 @@
+:root{
+  --primary:#7eb7c8; /* ブルーグリーン */
+  --primary-600:#67a6b9;
+  --primary-700:#4d92a7;
+  --secondary:#c8e3e9; /* ペールブルー */
+  --paper:#f0eee6; /* クリーム */
+  --ink:#1f2a2e; /* テキスト */
+  --muted:#5b6b73;
+  --white:#ffffff;
+  --radius-xl:1.25rem;
+  --shadow-lg:0 10px 30px rgba(31,42,46,.15);
+  --shadow-sm:0 4px 12px rgba(31,42,46,.08);
+  --primaryj:#F2D34F; 
+  --nav-label-color: #ffffff;
+   --primary2: #f7834d;
+  --primary-light2: #fff1e8;
+  --bg2: #f7fbbb;
+  --text2: #333;
+  --shadow2: 0 4px 15px rgba(0,0,0,0.1);
+  --radius2: 14px;
+  --bleuDefond2: #98ceaf;
+  --grisBouton2:#9f9d75;
+  --jauneFran2: #f8d88c;
+  --bleuDefondClair2: #c0e9d2;
+
+  --vertClair2: #cfe8dc;     /* fond léger, cartes */
+  --vertSauge2: #7fb8a1;    /* hover, headers */
+  --bleuGrise2: #7fa3a1;    /* tableaux, zones calmes */
+
+  --beigeClair2: #f4f1e6;    /* background général */
+  --sable2: #e6d3a3;        /* hover boutons */
+  --jaunePale2: #fff1c1; 
+
+
+  --corailDoux2: #f2a07b;   /* boutons principaux */
+  --terracotta2: #d98b6c;  /* focus / actif */
+  --rosePoudre2: #f6c1b0;  /* badges */
+
+}
+
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    overflow-x:hidden;
+}
+section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    margin:0;
+    padding:0;
+}
+
+.hero{
+    background-image:url("PourCreerGif.gif");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.profile-section,
+.carousel-section{
+    margin: 0;
+}
+.profile-section{
+    background: linear-gradient(
+        180deg,
+        var(--paper),
+        var(--secondary)
+    );
+}
+
+.carousel-section{
+  transition: background 0.7s ease;
+    
+}
+.bio{
+    width:70%;
+    max-width:800px;
+    padding:40px;
+    background:rgba(255,255,255,0.45);
+    border-radius:20px;
+    backdrop-filter:blur(8px);
+    position:relative;
+    z-index:2;
+    color:var(--ink);
+}
+
+.bio h2{
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+.bio p{
+    font-size:1.2rem;
+    line-height:1.8;
+}
+
+/* THEMES */
+
+.theme1{
+       background-image: url("PourCreerGif.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.theme2{
+    background: linear-gradient(
+        180deg,
+        var(--secondary),
+        var(--paper)
+    );
+}
+
+.theme2-bio{
+    background: linear-gradient(
+        180deg,
+        var(--paper),
+        var(--secondary)
+    );
+}
+
+/* Nuages cachés par défaut */
+.clouds{
+    display:none;
+}
+
+.theme2 .clouds,
+.theme2-bio .clouds{
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+}
+
+.theme2 .cloud,
+.theme2-bio .cloud{
+    position:absolute;
+    width:180px;
+    height:auto;
+    opacity:.6;
+    animation-name:drift;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+    z-index:1;
+}
+
+/* important : chaque nuage commence hors écran */
+.c1 { top:8%;  left:-25%; animation-duration:55s; animation-delay:0s; z-index:-1; }
+.c2 { top:38%; left:-35%; animation-duration:70s; animation-delay:-10s; opacity:.22; z-index:-1; }
+.c3 { top:65%; left:-30%; animation-duration:60s; animation-delay:-25s; z-index:-1;}
+.c4 { top:20%; left:-40%; animation-duration:85s; animation-delay:-15s; opacity:.18; z-index:-1; }
+.c5 { top:8%;  left:-25%; animation-duration:200s; animation-delay:0s; z-index:-1; }
+.c6 { top:38%; left:-35%; animation-duration:150s; animation-delay:-10s; opacity:.22; z-index:-1; }
+.c7 { top:65%; left:-30%; animation-duration:40s; animation-delay:-25s; z-index:-1;}
+.c8 { top:20%; left:-40%; animation-duration:100s; animation-delay:-15s; opacity:.18; z-index:-1; }
+.c9 { top:8%;  left:-25%; animation-duration:300s; animation-delay:0s; z-index:-1; }
+.c10 { top:38%; left:-35%; animation-duration:250s; animation-delay:-10s; opacity:.22; z-index:-1; }
+.c11 { top:65%; left:-30%; animation-duration:280s; animation-delay:-25s; z-index:-1;}
+.c12 { top:20%; left:-40%; animation-duration:220s; animation-delay:-15s; opacity:.18; z-index:-1; }
+@keyframes drift{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(calc(100vw + 400px));
+    }
+}
+
+/* Le contenu doit être au-dessus des nuages */
+h1,
+.carousel-container,
+.controls{
+    position:relative;
+    z-index:2;
+}
+
+.theme3{
+    background-image: url("fondPrairie.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1{
+    width: 40%;
+    color:white;
+    margin-bottom:40px;
+    margin-left: 30%;
+    margin-top: 20%;
+}
+
+/* ZONE CARROUSEL */
+
+.carousel-container{
+    position:relative;
+    width:800px;
+    height:550px;
+}
+
+/* CARTES */
+
+.card{
+    position:absolute;
+    text-decoration:none;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,0.2);
+
+    transition:all .7s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* gauche */
+
+.left{
+    width:180px;
+    height:180px;
+
+    top:80px;
+    left:80px;
+
+    opacity:.7;
+}
+
+/* haut */
+
+.top{
+    width:180px;
+    height:180px;
+
+    top:40px;
+    left:310px;
+
+    opacity:.7;
+}
+
+/* actif */
+
+.active{
+    width:280px;
+    height:280px;
+
+    bottom:0;
+    left:260px;
+
+    opacity:1;
+    box-shadow:0 0 30px rgba(255,255,255,.5);
+}
+
+/* flèches décoratives */
+
+.arrow-deco{
+    position:absolute;
+    pointer-events:none;
+}
+
+.arrow-left{
+    width:130px;
+    left:120px;
+    top:220px;
+}
+
+.arrow-top{
+    width:130px;
+    top:70px;
+    left:500px;
+}
+
+.arrow-right{
+    width:130px;
+    top:220px;
+    right:120px;
+}
+
+/* contrôles */
+
+.controls{
+    margin-top:30px;
+}
+
+.controls button{
+  width: 60px;
+  height: 60px;
+  margin: 0 15px;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.25);
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+.theme4{
+    background-image: url("fondFrites.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+.theme5{
+    margin: 0;
+font-family: 'Noto Sans JP', sans-serif;
+color: var(--bleuDefond);
+
+background-image: url(BackgroundShuushokuSakuhin.gif);
+background-repeat: no-repeat;      /* évite que l'image se répète */
+background-position: center;       /* recentre l’image */
+background-size: contain;          /* adapte l’image pour qu’elle soit entièrement visible */
+background-color: var(--bg);       /* couleur visible autour si l'image ne couvre pas tout */
+min-height: 110vh;  
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+}
+
+.right{
+    width:180px;
+    height:180px;
+    top:80px;
+    right:80px;
+    opacity:.7;
+}
+
+.bottom{
+    width:180px;
+    height:180px;
+    bottom:40px;
+    left:80px;
+    opacity:.7;
+}
+.welcome-card{
+    background:none;
+    backdrop-filter:none;
+    box-shadow:none;
+}
+
+.welcome-card img{
+    border-radius:0;
+    object-fit:contain;
+}
+
+.carousel-content{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    position:relative;
+    z-index:2;
+}
+
+.active-description{
+    width:320px;
+    padding:30px;
+    background:rgba(255,255,255,0.55);
+    border-radius:20px;
+    backdrop-filter:blur(8px);
+    color:var(--ink);
+    box-shadow:var(--shadow-sm);
+}
+
+.active-description h2{
+    margin-bottom:15px;
+    font-size:1.8rem;
+}
+
+.active-description p{
+    font-size:1.1rem;
+    line-height:1.7;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+.site-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    padding: 0 40px;
+    background: #f8d694;
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.logo img{
+    height: 55px;
+    display: block;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.menu a,
+.contact-menu summary{
+    text-decoration: none;
+    color: #f39238;
+    font-weight: bold;
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+.menu a:hover,
+.contact-menu summary:hover{
+    color: #7fb8a1;
+}
+
+.contact-menu{
+    position: relative;
+}
+
+.contact-menu summary{
+    list-style: none;
+}
+
+.contact-menu summary::-webkit-details-marker{
+    display: none;
+}
+
+.contact-info{
+    position: absolute;
+    top: 35px;
+    right: 0;
+    width: 230px;
+    padding: 18px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: var(--shadow-sm);
+    color: var(--ink);
+    line-height: 1.8;
+}
+
+.site-footer{
+    padding: 35px;
+    text-align: center;
+    background: #f8d694;
+    color: white;
+    font-weight: bold;
+}
+.menu img{
+    height: 45px;   /* taille des boutons */
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.menu img:hover{
+    transform: scale(1.1);
+}
+
+.contact-menu summary{
+    list-style: none;
+    cursor: pointer;
+}
+
+.contact-menu summary::-webkit-details-marker{
+    display: none;
+}
